@@ -20,21 +20,13 @@ const API_KEY = '1twKLyrauG3OZrFZiN9ApTE1ANWFyZTo';
 
 fetch(`${BASE_URL}/events.json?apikey=${API_KEY}`)
   .then(resonse => resonse.json())
-  .then(countries => {
-    console.log(countries._embedded.events);
-    const markup = countriesListTpl(countries);
-    console.log(markup);
-  })
+  .then(addCountries)
   .catch(err => console.log(err));
 
-// const BASE_URL = 'https://restcountries.eu/rest/v2';
-
-// function fetchCountries(searchQuery) {
-//   return fetch(`${BASE_URL}/events.json?apikey=${API_KEY}/${searchQuery}`).then(response =>
-//     response.json(),
-//   );
-// }
-
-// export default { fetchCountries };
+function addCountries(countries) {
+  console.log(countries);
+  const markup = countries.map(countriesListTpl).join('');
+  console.log(markup);
+}
 
 const searchCountry = document.querySelector('#country');

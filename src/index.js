@@ -1,10 +1,11 @@
 // import './sass/main.scss';
-// import API from './js/api';
+import API from './js/api';
 
-// function searchInputCountries(e) {
-//   const searchQuery = e.target.value;
-//   console.log(searchQuery);
-// }
+function searchInputCountries(e) {
+  const searchQuery = e.target.value;
+  console.log(searchQuery);
+}
 
-// console.log(searchInputCountries());
-// function dataListCountries() {}
+const serchCountries = document.querySelector('#country');
+
+// serchCountries.addEventListener('input', debounce(searchInputCountries, 1000));
